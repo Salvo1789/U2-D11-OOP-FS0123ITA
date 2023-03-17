@@ -8,79 +8,21 @@
 </head>
 <body>
     
-    <h2>JavaScript Validation</h2>
+    <div>
+        <input type="text" id="petName-field" placeholder="Inserisci nome animale">
+    </div>    
+    <div>
+        <input type="text" id="ownerName-field" placeholder="Inserisci nome proprietario">
+    </div>
+    <div>
+        <input type="text" id="species-field" placeholder="Inserisci specie">
+    </div>
+    <div>
+        <input type="text" id="breed-field" placeholder="Inserisci razza">
+    </div>
+    <button id="add">Aggiungi</button>
+    <ul id="petList"></ul>
 
-    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-    Pet Name: <input type="text" name="petName">
-    Owner's Name: <input type="text" name="ownerName">
-    Species: <input type="text" name="species">
-    Breed: <input type="text" name="breed">
-    <input type="submit" value="Submit">
-    </form>
-    
-
-    <script>
-
-        //Esercizio1
-        class User{
-
-            constructor(_firstName,_lastName,_age,_location){
-                this.firstName = _firstName;
-                this.lastName = _lastName;
-                this.age = _age;
-                this.location = _location;
-            }
-
-            compareAges(person2){
-                if (this.age > person2.age){
-                    console.log(this.firstName + " " + this.lastName + " è più grande di " + person2.firstName +" " + person2.lastName);
-                }
-                else{
-                    console.log(person2.firstName + " " + person2.lastName + " è più grande di " + this.firstName + " " + this.lastName);
-                }
-            }
-        }
-        
-        const x = new User("Luigi","De Maria","25","Milano");
-        const y = new User("Federica","Brambilla","23","Monza");
-
-        x.compareAges(y);
-
-        const a = new User("Domenico","Sforza","22","Napoli");
-        const b = new User("Alessia","Turco","31","Roma");
-
-        a.compareAges(b);
-
-
-        //Esercizio2
-        class Pet{
-
-            constructor(){
-                this.petName = document.forms["myForm"]["petName"].value;
-                this.ownerName = document.forms["myForm"]["ownerName"].value;
-                this.species = document.forms["myForm"]["species"].value;
-                this.breed = document.forms["myForm"]["breed"].value;
-            }
-
-            checkOwner(pet2){
-                if (this.ownerName == pet2.ownerName){
-                    console.log(this.petName + " " + " e " + pet2.petName +" hanno lo stesso padrone");
-                    console.log(true);
-                }
-                else{
-                    console.log(this.petName + " " + " e " + pet2.petName +" non hanno lo stesso padrone");
-                    console.log(false);
-                }
-            }
-        }
-
-        const pepe = new Pet();
-        const chucky = new Pet();
-
-        console.log(pepe);
-        console.log(chucky);
-
-
-    </script>
+<script src="./exercise-2.js" ></script>
 </body>
 </html>
